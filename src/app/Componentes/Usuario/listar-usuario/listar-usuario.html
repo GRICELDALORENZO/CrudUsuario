@@ -1,0 +1,49 @@
+<div class="cotainer">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Lista de Usuarios</h4>
+             <button type="button" class="btn btn-outline-secondary" (click)="guardarUsuario()">NUEVO USUARIO</button>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID USUARIO</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDO PATERNO</th>
+                        <th>APELLIDO MATERNO</th>
+                        <th>SEXO</th>
+                        <th>CORREO</th>
+                        <th>FECHA DE NACIMIETNO</th>
+                        <th>FECHA DE CREACION</th>
+                        <th>ID ROL</th>
+                        <th>EDITAR</th>
+                        <th>ELIMINAR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (usuario of usuarios; track usuario.idUsuario){
+                    <tr >     
+                        <td>{{usuario.idUsuario}}</td>
+                        <td>{{usuario.nombre}}</td>
+                        <td>{{usuario.app}}</td>
+                        <td>{{usuario.apm}}</td>
+                        <td>{{usuario.sexo}}</td>
+                        <td>{{usuario.correo}}</td>
+                        <td>{{usuario.fechaNacimiento}}</td>
+                        <td>{{usuario.fechaCreacion}}</td>
+                        <td>{{usuario.rolId?.privilegio || 'SIN ROL'}}</td>
+                        <td><button type="button" class="btn btn-outline-success" (click)="editar(usuario.idUsuario)" >EDITAR</button></td>
+                        <td><button type="button" class="btn btn-outline-danger" (click)="eliminar(usuario)">ELIMINAR</button></td>
+                    </tr>
+                    }
+                
+                </tbody>
+                
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

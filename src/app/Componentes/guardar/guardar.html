@@ -1,0 +1,20 @@
+<div class="cotainer">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">NUEVO ROL</h4>
+
+        </div>
+        <div class="card-body">
+            <label for="idRol" >ID ROL</label>
+            <input type="number" class="form-control" name="idRol" placeholder="Escribe un nuevo ID" [(ngModel)]="rol.idRol" required>
+           
+            <label for="privilegio">PRIVILEGIO</label>
+            <input type="text" class="form-control" name="privilegio" placeholder="Escribe el privilegio" [(ngModel)]="rol.privilegio">
+
+        </div>
+            <button class="btn btn-outline-success" type="button" (click)="guardar()">GUARDAR</button>
+            
+            
+    </div>
+
+</div>

@@ -1,0 +1,51 @@
+
+<form #formUsuario="ngForm" (ngSubmit)="guardarUsuario()">
+<div class="cotainer">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">NUEVO USUARIO</h4>
+
+         </div>
+         <div class="card-body">
+            <label for="idUsuario" >ID USUARIO</label>
+            <input type="number" class="form-control" name="idUsuario" placeholder="Escribe un nuevo ID" [(ngModel)]="usuarios.idUsuario" required>
+           
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" name="nombre" placeholder="Escribe un nombre" [(ngModel)]="usuarios.nombre" required #nombre="ngModel" (ngModelChange)="correo()">
+         
+
+            <label for="app">Apellido PATERNO</label>
+            <input type="text" class="form-control" name="app" placeholder="Escribe el apellido paterno" [(ngModel)]="usuarios.app" required #app="ngModel" (ngModelChange)="correo()">
+           
+
+            <label for="apm">APELLIDO MATERNO</label>
+            <input type="text" class="form-control" name="apm" placeholder="Escribe el apellido materno" [(ngModel)]="usuarios.apm" required>
+
+            <label for="sexo">SEXO</label>
+            <select class="form-control" name="sexo" placeholder="Elija el Genero" [(ngModel)]="usuarios.sexo">
+                <option value="">-- Selecciona una opción --</option>
+                <option value="Masculino">MASCULINO</option>
+                <option value="Femenino">FEMENINO</option>
+                <option value="Otro">OTRO</option>
+            </select>
+
+            <label for="correo">CORREO</label>
+            <input type="text" class="form-control" name="correo" placeholder="Correo electronico" [(ngModel)]="usuarios.correo" [disabled]="true" required>
+
+            <label for="fechaNacimiento">FECHA DE NACIMIENTO</label>
+            <input type="date" class="form-control" name="fechaNacimiento" placeholder="Escribe su fecha de nacimiento" [(ngModel)]="usuarios.fechaNacimiento" required>
+
+            <label for="fechaCreacion">FECHA DE CREACION</label>
+            <input type="date" class="form-control" name="fechaCreacion" placeholder="Escribe su fecha de Creacion" [(ngModel)]="usuarios.fechaCreacion" required>
+
+             <label for="rolId">ID ROL</label>
+            <input type="number" class="form-control" name="rolId" placeholder="Escribe el ID del rol" [(ngModel)]="rol.idRol" required>
+
+
+        </div>
+          <button [disabled]="formUsuario.invalid" type="submit" class="btn btn-success"> ACTUALIZAR</button>
+
+    </div>
+
+</div>
+</form>
