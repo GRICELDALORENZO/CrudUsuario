@@ -22,8 +22,8 @@ export class Editar implements OnInit {
   }
 
   buscar(){
-    this.rol.idRol = Number(localStorage.getItem("idRol"));
-    this.peticion.buscar(this.rol).subscribe(data =>{
+    const idRol = Number(localStorage.getItem("idRol"));
+    this.peticion.buscar(idRol).subscribe(data =>{
      console.log(JSON.stringify(data));
       this.rol = data;
     })
@@ -39,13 +39,6 @@ editar(){
         showConfirmButton:false
       });
       this.router.navigate(['listar']);
-    }, error =>{
-      Swal.fire({
-      icon: "error",
-      title: "GUARDAR",
-      text: JSON.stringify(error.error.mensaje),
-      footer: '<a href="#">Why do I have this issue?</a>'
-    });
     })
   }
   

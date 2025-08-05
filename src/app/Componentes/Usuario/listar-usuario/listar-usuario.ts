@@ -41,7 +41,7 @@ export class ListarUsuario {
   eliminar(usuario:Usuario){
      Swal.fire({
         title: '¿Estás seguro?',
-        text: `Eliminar al Usuario "${usuario.nombre}"`,
+        text: `Eliminar al Usuario "${usuario.idUsuario}"`,
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -49,10 +49,10 @@ export class ListarUsuario {
         confirmButtonText: 'Sí, eliminar'
       }).then(data => {
         if (data.isConfirmed) {
-          this.peticion.eliminarU(usuario).subscribe(() => {
+          this.peticion.eliminarU(usuario.idUsuario).subscribe(() => {
            Swal.fire({
           title: 'Eliminado!',
-          text: `El Usuario " ${usuario.nombre}" ha sido eliminado."`,
+          text: `El Usuario " ${usuario.idUsuario}" ha sido eliminado."`,
           icon: 'success'
         });
             this.listarUsuario(); // Vuelve a cargar la lista

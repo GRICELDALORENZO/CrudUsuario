@@ -1,4 +1,4 @@
-import { Roles } from "./Roles";
+
 
 /*
 ID_USUARIO NUMBER, 
@@ -19,5 +19,5 @@ export class Usuario{
     correo !: String;
     fechaNacimiento !: Date;
     fechaCreacion !: Date;
-    rolId !: Roles;
+    rolId !: Number;
 }

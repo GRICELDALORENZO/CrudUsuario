@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PeticionesWS } from '../../../Service/peticiones-ws';
 import { Router } from '@angular/router';
 import { Roles } from '../../../Entidad/Roles';
@@ -13,15 +13,18 @@ import Swal from 'sweetalert2';
   styleUrl: './guardar-usuario.css'
 })
 export class GuardarUsuario {
+  form!:FormGroup
   
-  constructor(private peticion: PeticionesWS, private router:Router){}
+  constructor(private peticion: PeticionesWS, private router:Router, private fb: FormBuilder){
 
-  rol = new Roles();
+    
+  }
+
   usuarios  =new Usuario();
 
 guardarUsuario(){
   
-    this.usuarios.rolId = this.rol;
+    
     this.peticion.guardarU(this.usuarios).subscribe(data =>{
        Swal.fire({
       title: "GUARDAR",

@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 export class EditarUsuario implements OnInit{
   constructor(private peticion:PeticionesWS, private router:Router){}
   
-  rol = new Roles();
+ 
   usuarios = new Usuario();
 
   ngOnInit(): void {
@@ -23,15 +23,15 @@ export class EditarUsuario implements OnInit{
   }
 
   buscar(){
-    this.usuarios.idUsuario = Number(localStorage.getItem("idUsuario"));
-    this,this.peticion.buscarU(this.usuarios).subscribe(data =>{
+    const idUsuario = Number(localStorage.getItem("idUsuario"));
+    this.peticion.buscarU(idUsuario).subscribe(data =>{
       console.log(JSON.stringify(data));
       this.usuarios=data;
     })
   }
 
   editar(){
-    this.usuarios.rolId=this.rol;
+    
     console.log(this.usuarios);
     this.peticion.editarU(this.usuarios).subscribe(data =>{
       Swal.fire({

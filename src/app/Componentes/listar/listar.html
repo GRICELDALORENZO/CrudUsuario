@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-header">
             <h4 class="card-title">Lista de Roles</h4>
-            <button type="button" class="btn btn-outline-secondary" (click)="guardar()" >NUEVO</button>
+            <button type="button" class="btn btn-outline-secondary" (click)="guardar()">NUEVO</button>
         </div>
         <div class="card-body">
             <table class="table table-hover">
@@ -10,6 +10,7 @@
                     <tr>
                         <th>ID ROL</th>
                         <th>PRIVILEGIO</th>
+                        <th>ACCIONES</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -18,14 +19,16 @@
                         <td>{{rol.idRol}}</td>
                         <td>{{rol.privilegio}}</td>
                         <td><button type="button" class="btn btn-outline-success" (click)="editar(rol.idRol)">EDITAR</button></td>
-                        <td><button type="button" class="btn btn-outline-danger" (click)="eliminar(rol)" >ELIMINAR</button></td>
+                        <td><button type="button" class="btn btn-outline-danger" (click)="eliminar(rol)">ELIMINAR</button></td>
+                        <td><button type="button" class="btn btn-outline-warning" (click)="verUsuarios(rol.idRol)">USUARIOS</button></td>
                     </tr>
                     }
                 </tbody>
             </table>
 
+
+            </div>
+
         </div>
 
     </div>
-
-</div>

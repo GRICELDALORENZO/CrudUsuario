@@ -32,7 +32,7 @@
                         <td>{{usuario.correo}}</td>
                         <td>{{usuario.fechaNacimiento}}</td>
                         <td>{{usuario.fechaCreacion}}</td>
-                        <td>{{usuario.rolId?.privilegio || 'SIN ROL'}}</td>
+                        <td>{{usuario.rolId || 'SIN ROL'}}</td>
                         <td><button type="button" class="btn btn-outline-success" (click)="editar(usuario.idUsuario)" >EDITAR</button></td>
                         <td><button type="button" class="btn btn-outline-danger" (click)="eliminar(usuario)">ELIMINAR</button></td>
                     </tr>

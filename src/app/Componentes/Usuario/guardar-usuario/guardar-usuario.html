@@ -1,5 +1,5 @@
 
-<form #formUsuario="ngForm" (ngSubmit)="guardarUsuario()">
+
 <div class="cotainer">
     <div class="card">
         <div class="card-header">
@@ -8,11 +8,10 @@
          </div>
          <div class="card-body">
             <label for="idUsuario" >ID USUARIO</label>
-            <input type="number" class="form-control" name="idUsuario" placeholder="Escribe un nuevo ID" [(ngModel)]="usuarios.idUsuario" required>
+            <input type="number" class="form-control" name="idUsuario" placeholder="Nuevo ID generado Automaticamente" [(ngModel)]="usuarios.idUsuario" >
            
-          <label for="nombre">Nombre</label>
-          <input type="text" class="form-control" name="nombre" placeholder="Escribe un nombre" [(ngModel)]="usuarios.nombre" required #nombre="ngModel" (ngModelChange)="correo()">
-         
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" placeholder="Escriba el Nombre" [(ngModel)]="usuarios.nombre" (ngModelChange)="correo()">
 
             <label for="app">Apellido PATERNO</label>
             <input type="text" class="form-control" name="app" placeholder="Escribe el apellido paterno" [(ngModel)]="usuarios.app" required #app="ngModel" (ngModelChange)="correo()">
@@ -39,13 +38,13 @@
             <input type="date" class="form-control" name="fechaCreacion" placeholder="Escribe su fecha de Creacion" [(ngModel)]="usuarios.fechaCreacion" required>
 
              <label for="rolId">ID ROL</label>
-            <input type="number" class="form-control" name="rolId" placeholder="Escribe el ID del rol" [(ngModel)]="rol.idRol" required>
+            <input type="number" class="form-control" name="rolId" placeholder="Escribe el ID del rol" [(ngModel)]="usuarios.rolId" required>
 
 
         </div>
-          <button [disabled]="formUsuario.invalid" type="submit" class="btn btn-success"> ACTUALIZAR</button>
+          <button type="submit" class="btn btn-success" (click)="guardarUsuario()"> GUARDAR</button>
 
     </div>
 
 </div>
-</form>
+

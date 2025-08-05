@@ -1,4 +1,4 @@
-<form #formUsuario="ngForm" (ngSubmit)="editar()">
+
 <div class="cotainer">
     <div class="card">
         <div class="card-header">
@@ -38,14 +38,13 @@
             <input type="date" class="form-control" name="fechaCreacion" placeholder="Escribe su fecha de Creacion" [(ngModel)]="usuarios.fechaCreacion" required>
 
              <label for="rolId">ID ROL</label>
-            <input type="number" class="form-control" name="rolId" placeholder="Escribe el ID del rol" [(ngModel)]="rol.idRol" required>
+            <input type="number" class="form-control" name="rolId" placeholder="Escribe el ID del rol" [(ngModel)]="usuarios.rolId" required>
 
 
         </div>
-          <button [disabled]="formUsuario.invalid" type="submit" class="btn btn-success"> ACTUALIZAR</button>
+          <button type="submit" class="btn btn-success" (click)="editar()"> ACTUALIZAR</button>
 
     </div>
 
 </div>
-</form>
 
